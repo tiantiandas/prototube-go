@@ -5,9 +5,9 @@ import (
 	"time"
 
 	"github.com/Shopify/sarama"
-	prototube "github.com/fx19880617/prototube-go"
 	"github.com/google/uuid"
 	log "github.com/sirupsen/logrus"
+	prototube "github.com/tiantiandas/prototube-go"
 )
 
 var (

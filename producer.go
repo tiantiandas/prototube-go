@@ -13,7 +13,7 @@ import (
 
 var (
 	prototubeMessageHeader   = []byte{0x50, 0x42, 0x54, 0x42}
-	kafkaBootstrapBrokerList = []string{"localhost:9092"}
+	kafkaBootstrapBrokerList = []string{}
 )
 
 // Producer a event log producer that pushes events into Kinesis stream.
@@ -23,9 +23,9 @@ type Producer struct {
 }
 
 // New create a new producer for the specified topic
-func New(topic string) (*Producer, error) {
+func New(bootstrapServer string, topic string) (*Producer, error) {
 	producerConfig := &ProducerConfig{
-		KafkaBootstrapBrokerList: kafkaBootstrapBrokerList,
+		KafkaBootstrapBrokerList: append(kafkaBootstrapBrokerList, bootstrapServer),
 		KafkaProducerConfig:      getDefaultKafkaProducerConfig(),
 	}
 	return NewWithConfig(topic, producerConfig)

@@ -40,13 +40,13 @@ Below command generates the example `example.pb.go` from `example.proto` with mo
 
 ```
 cd examples
-protoc --go_out=import_path=main:. -Iidl idl/example.proto
+protoc --go_out=. idl/example.proto
 ```
 
 Use prototube producer
 ----------------------
 
-Please see this [example](https://github.com/fx19880617/prototube-go/blob/master/examples/main.go) for your reference.
+Please see this [example](https://github.com/tiantiandas/prototube-go/blob/master/examples/main.go) for your reference.
 
 Code snippet:
 ```
