@@ -8,7 +8,9 @@ which defines the schema of the event. Events that do not conform with the schem
 
 Internally prototube encodes the events using the following format:
 
-> \<Magic Number\> \<Header\> \<Event\>
+```
+<Magic Number> <Header> <Event>
+```
 
 * Magic Number: 0x50, 0x42, 0x54, 0x42
 * Header: Protobuf-encoded structure that contains the metadata of the event (e.g, timestamp / uuid)
@@ -27,10 +29,9 @@ Quickstart
 
 Build and run the example application to produce random messages to local Kafka.
 
-```
-cd examples
-go build .
-./example
+```sh
+$ cd examples
+$ go run main.go
 ```
 
 Compile a proto file
@@ -38,9 +39,9 @@ Compile a proto file
 
 Below command generates the example `example.pb.go` from `example.proto` with module `main`.
 
-```
-cd examples
-protoc --go_out=. idl/example.proto
+```sh
+$ cd examples
+$ protoc --go_out=. idl/example.proto
 ```
 
 Use prototube producer
@@ -49,7 +50,7 @@ Use prototube producer
 Please see this [example](https://github.com/tiantiandas/prototube-go/blob/master/examples/main.go) for your reference.
 
 Code snippet:
-```
+```go
 producer, err := prototube.NewWithConfig("testTopic", &prototube.ProducerConfig{
 	KafkaBootstrapBrokerList: []string{"localhost:9092"},
 })
