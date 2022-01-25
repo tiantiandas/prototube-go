@@ -19,7 +19,7 @@ Internally prototube encodes the events using the following format:
 How to use
 ==========
 
-Prequiste
+Prerequisite
 ---------
 
 Please follow this [Kafka Quickstart](https://kafka.apache.org/quickstart) link to install and start Kafka locally.
