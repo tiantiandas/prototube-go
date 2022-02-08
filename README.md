@@ -47,7 +47,7 @@ $ protoc --go_out=. idl/example.proto
 Use prototube producer
 ----------------------
 
-Please see this [example](https://github.com/tiantiandas/prototube-go/blob/master/examples/main.go) for your reference.
+Please see this [example](examples/main.go) for your reference.
 
 Code snippet:
 ```go
